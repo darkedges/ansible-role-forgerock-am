@@ -1,0 +1,45 @@
+---
+
+- name: upload staging files
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ fr_user }}"
+    mode: 0755 
+  with_items:
+    - src: "{{ fram_install_file }}"
+      dest: "{{ staging_dir }}/{{ fram_install_file }}" 
+
+- name: create top level software directories
+  file: 
+    path: "{{ item }}" 
+    state: directory 
+    owner: "{{ fram_fr_user }}" 
+    group: "{{ fram_fr_group }}" 
+    mode: 0755
+  loop:
+    - "{{ tomcat_instance_dir }}" 
+
+- name: Install ForgeRock Access Manager to tomcat
+  become_user: "{{ fram_fr_user }}"
+  unarchive: 
+    src: "{{ staging_dir }}/{{ fram_install_file }}"
+    dest: "{{ tomcat_instance_dir }}" 
+    copy: no      
+    owner: "{{ fram_fr_user }}"
+    group: "{{ fram_fr_group }}"
+    creates: "{{ tomcat_instance_dir }}/WEB-INF"
+
+- name: "Ensure {{ openam_service }} tomcat instance is running - CentOS/RHEL 6"
+  service: 
+    name: "{{ tomcat_service }}" 
+    state: restarted 
+    enabled: yes
+  when: ansible_distribution_major_version == '6'
+
+- name:  "Ensure {{ openam_service }} tomcat instance is running - CentOS/RHEL 7"
+  service: 
+    name: "{{ tomcat_service }}.service" 
+    state: restarted 
+    enabled: yes
+  when: ansible_distribution_major_version == '7'

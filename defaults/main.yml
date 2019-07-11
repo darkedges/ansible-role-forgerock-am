@@ -1,0 +1,10 @@
+install_root: /opt/ois
+staging_dir: /tmp/staging
+fram_fr_user: fr
+fram_fr_group: fr
+
+fram_install_file: AM-eval-6.5.0.war
+openam_webapp_dir: openam
+tomcat_service: openam
+tomcat_dir_webapps: /opt/tomcat/openam/webapps
+tomcat_instance_dir: "{{ tomcat_dir_webapps }}/{{ openam_webapp_dir }}"
