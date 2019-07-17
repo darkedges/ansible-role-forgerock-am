@@ -2,6 +2,7 @@
 dependencies: []
 
 galaxy_info:
+  role_name: forgerock_am
   author: darkedges
   description: ForgeRock Access Manager for Linux.
   company: "DarkEdges"

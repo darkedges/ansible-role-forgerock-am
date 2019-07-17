@@ -1,9 +1,14 @@
+---
+
 install_root: /opt/ois
 staging_dir: /tmp/staging
-fram_fr_user: fr
-fram_fr_group: fr
+fram_fr_user: forgerock
+fram_fr_group: forgerock
 
-fram_install_file: AM-eval-6.5.0.war
+fram_version: "6.5.0"
+fram_version_eval: true
+fram_install_file: "AM{{ '-eval' if fram_version_eval  }}-{{ fram_version }}.war"
+
 openam_webapp_dir: openam
 tomcat_service: openam
 tomcat_dir_webapps: /opt/tomcat/openam/webapps
