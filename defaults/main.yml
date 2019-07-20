@@ -9,6 +9,8 @@ fram_version: "6.5.0"
 fram_version_eval: true
 fram_install_file: "AM{{ '-eval' if fram_version_eval  }}-{{ fram_version }}.war"
 
+amster_enabled: true
+
 openam_webapp_dir: openam
 tomcat_service: openam
 tomcat_dir_webapps: /opt/tomcat/openam/webapps

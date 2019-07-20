@@ -1,5 +1,8 @@
 ---
-dependencies: []
+
+dependencies:
+  - { role: darkedges.forgerock_amster,
+      when: amster_enabled }
 
 galaxy_info:
   role_name: forgerock_am
