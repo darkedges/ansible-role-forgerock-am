@@ -4,6 +4,7 @@ install_root: /opt/ois
 staging_dir: /tmp/staging
 fram_fr_user: forgerock
 fram_fr_group: forgerock
+fram_install_operation: extract
 
 fram_version: "6.5.0"
 fram_version_eval: true
