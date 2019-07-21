@@ -4,8 +4,8 @@ services: docker
 
 env:
   global:
-    - GIT_REPO: forgerock-ds
-    - ROLE_NAME: forgerock_ds
+    - GIT_REPO: forgerock-am
+    - ROLE_NAME: forgerock_am
   matrix:
     - MOLECULE_DISTRO: centos7
 

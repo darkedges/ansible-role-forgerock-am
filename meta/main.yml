@@ -5,7 +5,7 @@ dependencies:
       when: amster_enabled }
 
 galaxy_info:
-  role_name: forgerock_am
+  role_name: darkedges.forgerock_am
   author: darkedges
   description: ForgeRock Access Manager for Linux.
   company: "DarkEdges"
