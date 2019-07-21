@@ -2,7 +2,7 @@
   when: fram_install_operation == 'extract' or
         fram_install_operation == 'installfram'
 
-- include_role: 
+- include_role:
     name: darkedges.forgerock_amster
   vars:
     amster_install_operation: installfram
