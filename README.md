@@ -1,5 +1,7 @@
 # Ansible Role: ForgeRock Access Manager
 
+[![Build Status](https://travis-ci.com/darkedges/ansible-role-forgerock-am.svg?branch=master)](https://travis-ci.com/darkedges/ansible-role-forgerock-am)
+
 ## License
 
 Copyright © 2019 [DarkEdges](https://bitbucket.org/darkedges).  

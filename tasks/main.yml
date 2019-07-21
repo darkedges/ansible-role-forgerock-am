@@ -1,3 +1,5 @@
+---
+
 - include_tasks: "extract.yml"
   when: fram_install_operation == 'extract' or
         fram_install_operation == 'installfram'
